@@ -206,9 +206,14 @@ h1, h2, h3 {
     padding: 10rem 0;
 }
 
-.row{
+.row {
     height: 350px;
     background: white;
+    box-shadow: 0px 0px 20px 0px black;
+    /*hor-offset ver-offset blur spread color*/
+}
+
+.row1 {
     margin-bottom: 10rem;
 }
 
@@ -248,4 +253,42 @@ h1, h2, h3 {
     text-transform: uppercase;
 }
 
+.row::after{
+    content:"";
+    display: block;
+    clear: both;
+}
 
+/*#################### features section styling ########################*/
+
+.features {
+    background: white;
+    padding: 10rem 0;
+}
+
+.box-wrapper::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.box-wrapper{
+    box-shadow: -5px 5px 20px 0px rgba(0, 0, 0, 0.50);
+}
+.column {
+    float: left;
+    width: 33.333333333333333333333%;
+    padding: 3rem;
+    text-align:center;
+}
+
+.column1, .column3 {
+    background-color: #111;
+
+}
+
+.column2 {
+    background: radial-gradient( circle farthest-corner at 150% 70%, #eba434 0%, #cf3030 100% );
+                                        /*use % to control positions,  % for volume(?), 100% orange makes it                                                                    completely orange*/ 
+    /* https://cssgradient.io/gradient-backgrounds/ */
+}
