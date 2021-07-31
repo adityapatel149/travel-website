@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+/*#################### html element styling ########################*/
+
+html {
+    font-size: 62.5%; /* 10px for default font size, but using % makes responsive website when someone chnages their browser's font size*/
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul li{
+    list-style: none;
+}
+
+a {
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+p, li {
+    font-size: 2rem;
+    margin-bottom: 0.5em; /*10px as fontsize=20px*/
+    letter-spacing: 0.15em;
+}
+
+h1, h2, h3 {
+    margin-bottom: 0.5em;
+    letter-spacing: 0.1em;
+    font-weight: 500; /*deafult 700*/
+}
+
+
+
+/*#################### Utility Classes ########################*/
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+.lg-heading{
+    font-size: 3.5rem;
+}
+
+.md-heading{
+    font-size: 2.2rem;
+}
+
+.sm-heading{
+    font-size: 1rem;
+}
+.text-orange {
+    color: #eba434;
+}
+
+.text-white{
+    color:white;
+}
+
+.text-dark {
+    color: #3c4947;
+}
+
+.btn{
+    display: inline-block;
+    padding: 0.5em 1.5em; /*so that it depends on the fontsize, and so the button size changes accordingly*/
+    margin: 0.5em 0;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.btn-primary{
+    background-color: white;
+    /*border-radius: 20%;*/
+    border-radius: 10em; /*enter any big value to get semicircles at the ends, doesnt matter for some reason, reeducing the value does make a difference tho*/
+}
+    .btn-primary:hover {
+        background-color: #111;
+    }    
+
+.btn-secondary {
+    background-color: white;
+    border-radius: 10em;
+    border: 3px solid #cf3030;
+    
+}
+.btn-secondary:hover {
+    background-color: #cf3030;
+    color: white;
+}
+
+
+/*#################### Header styling ########################*/
+
+.header {
+    position: relative; /*to use it to center header-content*/
+    height: 95vh; /*some keep 100vh but we are keeping some space so thaat user can know, there is more in the website below.*/
+    /*now i also want to make bg a little darker, so i will add another bg on the image*/
+    /*two colours passed in the function*/
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/header-image.jpg'); 
+    /*1 is opaque, 0 is transparent, kept both values same for uniformity
+        this makes the bg darker and text is more visible*/
+
+
+    /*background is not centered*/
+    background-position: center; /*bg stays in center even after changing the window size
+    if i keep position:top, it will be fixed from the top
+
+
+    auto:	Default value. The background image is displayed in its original size	
+    length:	Sets the width and height of the background image. The first value sets the width, the second value sets the height	
+    cover: Resize the bg image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edge
+    contain: Resize the background image to make sure the image is fully visible
+
+    WE USE COVER MOST OF THE TIME
+    */
+    background-size: cover;
+    background-repeat: no-repeat; /*does exactly what it says*/
+}
+
+.navbar {
+    /*border: 2px solid white;*/
+    padding: 1rem; /*10px*/
+    user-select: none; /*   IMPORTANT   : MAKES ELEMENT UNSELECTABLE    */
+    /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+}
+
+
+.header .navbar .logo {
+    float: left;
+    /*font-size: 3.5rem; I am using this same size for multiple things, and i dont want to write this size everytime for every item. I can and there is nothing wrong with that. but we are using utility classes for doing this. lg-heading*/
+    
+}
+
+.header .navbar .nav-items{
+    float: right;
+    margin-top: 1rem; /*10px*/
+}
+
+.navbar::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.navbar .nav-items .nav-item {
+    display: inline-block;
+
+    padding: 1rem; /*20px because li font-size is 2rem=20px*/
+    
+  /*  position: relative;
+    right: 30%;*/
+}
+
+.header .navbar .nav-item :link,
+.header .navbar .nav-item :visited
+{
+    color: white;
+}
+.header .navbar .nav-item :hover {
+    color: #eba434;
+    /* padding-bottom: 0.5rem;
+    border-bottom: 3px solid #eba434;*/
+}
+
+
+
+/*#################### Header content styling ########################*/
+
+.header .header-content {
+    text-align: center;
+    /*border: 2px solid white;*/
+
+    position: absolute;
+    top: 50%; /*shifts top edge down by 50% from top*/
+    left: 50%; /*shifts left edge right by 50% from left*/
+    /*the top left corner of the box is at center rn*/
+    transform: translate(-50%,-50%); /*transform relative to itself*/
+
+    /*to make the text moer readable and contrast, */
+    background: linear-gradient(to left, rgba(0,0,0,0.3),rgba(0,0,0,0.2),rgba(0,0,0,0));
+/* linear-gradient(direction, color-stop1, color-stop2, color-stop3, ...)*/
+                /*180 deg. to left, to right, to bottom right, etc.*/
+}
+.header-content h1{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.header-content p{
+    text-transform: uppercase;
+}
+
+
+/*#################### showcase section styling ########################*/
+
+.showcase{
+    background: #111;
+    padding: 10rem 0;
+}
+
+.row{
+    height: 350px;
+    background: white;
+    margin-bottom: 10rem;
+}
+
+.row1 .img-box, .row2 .text-box{
+    float: left;
+    width: 50%;
+}
+.row2 .img-box, .row1 .text-box{
+    float: right;
+    width: 50%;
+}
+
+.row .img-box{
+    /*border: 2px solid red;*/
+    height: 100%;
+}
+.row .text-box {
+    /*border: 2px solid rebeccapurple;*/
+    padding: 3rem;
+    height: 100%;
+    overflow: auto; /*rn i have less text but incase there is a lot of text...*/
+    /*i can use overflow:: scroll,but it shows an unusable horizontal scrollbar even if not needed, auto mages all that nicely, when to show when to not show*/
+
+
+    /*    VERY IMPORTANT, THIS SOLVED MY PROBLEM OF TEXT OVERFLOWING OUT OF FLOAT CONTAINER!!!*/
+
+
+}
+.row .img-box img{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.row .text-box h1{
+    text-transform: uppercase;
+}
+
+
