@@ -60,6 +60,9 @@ h1, h2, h3 {
 .text-orange {
     color: #eba434;
 }
+.text-red {
+    color: #cf3030;
+}
 
 .text-white{
     color:white;
@@ -69,6 +72,9 @@ h1, h2, h3 {
     color: #3c4947;
 }
 
+.bg-dark{
+    background-color: #111;
+}
 .btn{
     display: inline-block;
     padding: 0.5em 1.5em; /*so that it depends on the fontsize, and so the button size changes accordingly*/
@@ -96,6 +102,7 @@ h1, h2, h3 {
     background-color: #cf3030;
     color: white;
 }
+
 
 
 /*#################### Header styling ########################*/
@@ -132,15 +139,14 @@ h1, h2, h3 {
     user-select: none; /*   IMPORTANT   : MAKES ELEMENT UNSELECTABLE    */
     /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 }
-
-
-.header .navbar .logo {
+/*NOT MENTIONING .header BEFORE THESE CLASSES, BECAUSE I WANT THESE PROPERTIES TO APPLY IN MY ABOUT PAGE TOO, AND IT DOES NOT HAVE A HEADER*/
+.navbar .logo { 
     float: left;
     /*font-size: 3.5rem; I am using this same size for multiple things, and i dont want to write this size everytime for every item. I can and there is nothing wrong with that. but we are using utility classes for doing this. lg-heading*/
     
 }
 
-.header .navbar .nav-items{
+.navbar .nav-items{
     float: right;
     margin-top: 1rem; /*10px*/
 }
@@ -160,12 +166,12 @@ h1, h2, h3 {
     right: 30%;*/
 }
 
-.header .navbar .nav-item :link,
-.header .navbar .nav-item :visited
+.navbar .nav-item :link,
+.navbar .nav-item :visited
 {
     color: white;
 }
-.header .navbar .nav-item :hover {
+.navbar .nav-item :hover {
     color: #eba434;
     /* padding-bottom: 0.5rem;
     border-bottom: 3px solid #eba434;*/
@@ -201,7 +207,7 @@ h1, h2, h3 {
 
 /*#################### showcase section styling ########################*/
 
-.showcase{
+.showcase {
     background: #111;
     padding: 10rem 0;
 }
@@ -291,4 +297,155 @@ h1, h2, h3 {
     background: radial-gradient( circle farthest-corner at 150% 70%, #eba434 0%, #cf3030 100% );
                                         /*use % to control positions,  % for volume(?), 100% orange makes it                                                                    completely orange*/ 
     /* https://cssgradient.io/gradient-backgrounds/ */
+}
+
+.fas{
+    padding-bottom: 0.4em;
+}
+
+
+/*#################### footer section styling ########################*/
+.footer {
+    background-color: #111;
+    padding: 2rem 0;
+    text-align: center;
+    padding: 2rem;
+}
+
+.footer p{
+    margin-bottom:0px;
+}
+
+.footer .social i{
+    margin: 2rem;
+}
+
+
+
+
+/*#################### ABOUT PAGE styling ########################*/
+
+.about{
+    padding: 5rem 0;
+}
+
+/* DRAWING LINE USING PSEUDO ELEMENT
+    we areusing pseudo element for this because it will also allow us to chnage the line's width.
+    if i gace border directly to h2, I wont have much control on its width.
+*/
+.about-heading::after{
+    content:"";
+    display: block; /*inline by default*/
+    border: 3px solid #cf3030;
+    /*will give me a border of 6px a sit will have both top and bottom border*/
+    width: 100%;
+}
+
+.about p, .about li{
+    letter-spacing: 0.1em;
+    font-size: 1.6rem;
+}
+
+.points {
+    text-align:center;
+    margin-top: 2rem;
+}
+
+.left-points{
+    float: left;
+    width:50%;
+}
+.right-points{
+    float: right;
+    width: 50%;
+}
+
+
+.points::after{
+    content:"";
+    display: block;
+    clear:both;
+}
+
+.points li::before {
+    content: '\2713'; /*got this code from internet */
+    /* google "tick mark symbol code css content" */
+    color: #cf3030;
+    font-weight: bold;
+    padding-right: 1rem;
+}
+
+
+/*#################### counts styling ########################*/
+.count-item{
+    float: left;
+    width: 25%;
+    text-align: center;
+    margin-top: 2rem;
+}
+.count {
+    margin-top: 2rem;
+}
+.count::after{
+    content:'';
+    display:block;
+    clear: both;
+
+}
+
+.count-item span{
+    font-weight: 700;
+
+}
+.count-item p{
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+
+/*#################### banner styling ########################*/
+
+.banner {
+    background: radial-gradient( circle farthest-corner at 150% 70%, #eba434 0%, #cf3030 100% );
+    padding: 2rem;
+    position: relative;
+    margin-top: 5rem;
+    box-shadow: -5px 5px 20px 0px rgba(0, 0, 0, 0.50);
+}
+
+.banner-text p {
+    float: left;
+    width: 70%;
+    padding: 0.5em;
+    margin: 0px; /*we have set p to have margin-bottom: 0.5em(above utility classes), and i dont want that here*/
+    
+    font-weight:500;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%)
+}
+.contact{
+    float:right;
+    width: 25%;
+    text-align: right;
+
+}
+
+.banner::after{
+    content:'';
+    display:block;
+    clear: both;
+}
+
+
+.btn-contact {
+    text-align: center;
+    display: inline-block;
+    color: white;
+    text-transform: capitalize;
+    font-weight: 700;
+    padding: 1em 2em;
+    border: 0.4rem solid white;
+    letter-spacing: 0.5rem;
 }
