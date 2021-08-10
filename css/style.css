@@ -449,3 +449,116 @@ h1, h2, h3 {
     border: 0.4rem solid white;
     letter-spacing: 0.5rem;
 }
+
+
+
+
+/*#################### CONTACT US styling ########################*/
+
+.contact-body {
+    background: radial-gradient( circle farthest-corner at 150% 70%, #eba434 0%, #cf3030 100% );
+    height: 100vh; /*gradient repeat thatutu because html code pati jatoto toh body pati jatutu and eni niche ni blank space me repeat thatutu gradient, cover, contain didnt work either
+        using this gives gradient across the whole visible area always
+    */
+}
+.contact-form {
+    /*border: 6px solid black;*/
+
+}
+.form-wrapper{
+   /* border: 2px solid red;*/
+    padding: 5rem;
+}
+.company-address {
+   /* border: 2px solid green;*/
+    background-color: white;
+    float: left;
+    width: 49%; /*for some space between the two*/
+    height: 760px; /*company adress and form both given same height so it looks uniform*/
+    padding: 1.5rem;
+}
+.form {
+    /*border: 2px solid blue;*/
+    background-color: white;
+    float: right;
+    width: 49%;
+}
+.form-wrapper::after{
+    content:'';
+    display: block;
+    clear:both;
+}
+
+.company-address img {
+    display: inline-block;
+    max-width: 100%;
+    min-height: 40rem;
+    object-fit: cover;
+    /*object-position: left;*/
+}
+
+.company-address p{
+    margin-bottom: 1em;
+    padding-left: 4rem;
+}
+.company-address .fas{
+    padding: 1rem;
+}
+
+
+/* ####################### form styling ##################### */
+
+.form {
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    height: 760px;
+}
+
+.form h1::after{
+    content:'';
+    display: block;
+    border: solid 2px #eba434;
+    width: 100%;
+}
+
+.form p{
+    font-size: 1.4rem;
+}
+
+.form label{
+    display: block;/*so that the input field goes in next line*/
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+    
+}
+.form input{
+    width: 100%; /*so it looks good and clean. by default it had uneven widths and didnt look good*/
+    padding: 0.5rem;
+}
+.form textarea{
+    width: 100%;
+    height: 355px;
+    padding:1rem;
+}
+
+.form-wrapper .form .form-group{
+    margin-bottom: 1.2rem;
+}
+
+.form-wrapper .form label::after{
+    content:" *";
+    color: #cf3030;
+} 
+
+.form-btn{
+    display:block;
+    margin: 0 auto;
+    padding: 0.5em 3em;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: #eba434;
+    color: white;
+    outline: none;
+    border: none;
+}
