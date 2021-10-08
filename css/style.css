@@ -563,3 +563,161 @@ h1, h2, h3 {
     outline: none;
     border: none;
 }
+
+
+
+/* ######################## media queries ############################# */
+
+/*go down to check  for landscape mode too*/
+
+@media (max-width: 500px){
+    html{
+        font-size: 45%; 
+    }
+
+    .navbar .nav-items, .navbar .logo{
+        float: none;
+        display: block;
+        width:100%;
+        text-align: center;
+    }
+
+    .header-content h1{
+        display: none;
+    }
+
+    .row .img-box, .row .text-box {
+        float: none;
+        display: block;
+        width: 100%;
+        height: 50%;
+        text-align:center;
+    }
+
+    .row {
+        height: auto; /*was 350px before*/
+        width: 100%;
+    }
+
+    .column{
+        float: none;
+        display: block;
+        width: 100%;        
+        text-align:center;
+    }
+
+    .banner-text p, .contact {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    .banner-text p {
+        position: relative;
+        transform: translateY(0%);
+        margin-bottom: 1rem;
+    }
+
+    .form-wrapper .company-address {
+        float: none;
+        width: 100%;
+        height: auto;
+        margin-bottom: 5rem;
+    }
+    .form-wrapper .company-address p{
+        font-size: 1.5rem;
+    }
+
+
+    .form-wrapper .form {
+            float: none;
+            width: 100%;
+            height: auto;
+    }
+
+    .contact-body{
+        height: auto;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 768px){
+    html {
+        font-size: 50%;
+    }
+
+    p{
+        font-size: 2rem;
+    }
+    .navbar .nav-items, .navbar .logo {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .row .img-box, .row .text-box {
+        float: none;
+        display: block;
+        width: 100%;
+        height: 50%;
+        text-align: center;
+    }
+
+    .row {
+        height: auto; /*was 350px before*/
+        width: 100%;
+    }
+
+    .column {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .banner-text p, .contact {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .banner-text p {
+        position: relative;
+        transform: translateY(0%);
+        margin-bottom: 1rem;
+    }
+
+    .form-wrapper .company-address {
+        float: none;
+        width: 100%;
+        height: auto;
+        margin-bottom: 5rem;
+    }
+
+
+
+    .form-wrapper .form {
+        float: none;
+        width: 100%;
+        height: auto;
+    }
+
+    .contact-body {
+        height: auto;
+    }
+}
+
+@media (min-width: 769px) and (max-width:1200px){
+    html{
+        font-size: 56.25%;
+    }
+}
+
+/*the home page messes up in landscape mode for small devices*/
+/* adding 500px condition too because i dont want to apply this in desktops which are landscape too, only want to do this in smaller devices*/
+@media (orientation: landscape) and (max-height: 500px){
+    .header{
+        height: 90vmax; /*width will be max in landscape mode and i want 90% of width to be my height
+            or can use 90vw */
+    }
+} 
